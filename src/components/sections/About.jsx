@@ -14,7 +14,7 @@ const About = () => {
           </span>
           <h2 className="title-md">Building with purpose.</h2>
           <p className="text-muted leading-relaxed">
-            With 5+ years of full‑stack experience, I architect scalable web
+            With 3+ years of full‑stack experience, I architect scalable web
             applications that prioritize user experience and clean code. I
             believe in thoughtful design, performance, and continuous learning.
           </p>
@@ -22,7 +22,7 @@ const About = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 gap-3 pt-2">
             <div>
-              <span className="block text-2xl font-semibold">5+</span>
+              <span className="block text-2xl font-semibold">3+</span>
               <span className="text-sm text-muted">Years experience</span>
             </div>
             <div>
