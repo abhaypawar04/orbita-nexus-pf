@@ -52,14 +52,14 @@ const Contact = () => {
                 href="mailto:alex@merndev.io"
                 className="text-primary hover:underline"
               >
-                alex@merndev.io
+                pawarabhay@icloud.com
               </a>
             </div>
             <div>
               <span className="block text-sm font-medium text-dark">
                 Location
               </span>
-              San Francisco, CA
+              Pune, Maharashtra
             </div>
             <div className="flex gap-4 pt-2">
               <a

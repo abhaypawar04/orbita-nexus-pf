@@ -32,8 +32,8 @@ const Navbar = () => {
           href="#"
           className="text-xl font-bold tracking-tight hover:opacity-80 transition"
         >
-          <span className="text-gradient">MERN</span>
-          <span className="text-dark">.</span>
+          <span className="text-gradient"> ABHAY S. PAWAR</span>
+          <span className="text-dark"></span>
         </a>
 
         {/* Desktop Navigation */}

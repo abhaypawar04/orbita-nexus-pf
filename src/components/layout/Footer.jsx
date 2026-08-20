@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Brand */}
         <div className="flex items-center gap-2">
           <span className="font-bold text-dark">MERN.</span>
-          <span>© {currentYear} Alex Rivera</span>
+          <span>© {currentYear} Abhay S. Pawar</span>
         </div>
 
         {/* Navigation */}

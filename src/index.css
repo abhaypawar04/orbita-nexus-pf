@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Tailwind v4 theme configuration */
+@theme {
+  --color-lightBg: #f8fafc;
+  --color-dark: #0f172a;
+  --color-muted: #64748b;
+  --color-primary: #6366f1;
+  --color-secondary: #8b5cf6;
+}
 
 @layer base {
   html {
@@ -30,33 +37,34 @@
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
   }
 }
 
 @layer components {
   .glass {
-    @apply bg-white/60 backdrop-blur-xl border border-white/30;
+    @apply border border-white/30 bg-white/60 backdrop-blur-xl;
   }
 
   .nav-glass {
-    @apply bg-white/70 backdrop-blur-2xl border-b border-black/5;
+    @apply border-b border-black/5 bg-white/70 backdrop-blur-2xl;
   }
 
   .section-pad {
-    @apply py-20 px-6 md:py-28 md:px-10 lg:px-20 max-w-7xl mx-auto;
+    @apply mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28 lg:px-20;
   }
 
   .title-lg {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+    @apply text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl;
   }
 
   .title-md {
-    @apply text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight;
+    @apply text-2xl font-semibold tracking-tight md:text-3xl lg:text-4xl;
   }
 
   .subtitle {
-    @apply text-base md:text-lg text-muted max-w-2xl leading-relaxed;
+    @apply max-w-2xl text-base leading-relaxed text-muted md:text-lg;
   }
 
   .card-hover {

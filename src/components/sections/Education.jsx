@@ -2,30 +2,30 @@ import React from "react";
 
 const educationData = [
   {
-    title: "MSc. Computer Science",
-    institution: "Stanford University",
-    year: "2017 – 2019",
+    title: "MCA. Computer Application",
+    institution: "SPPU Pune University",
+    year: "2023 – 2025",
     description:
       "Specialization in distributed systems and human‑computer interaction.",
   },
   {
-    title: "AWS Certified Developer",
-    institution: "Amazon Web Services",
-    year: "2022",
-    description: "Designing and deploying cloud‑native applications on AWS.",
+    title: "Certified Developer",
+    institution: "Web Services",
+    year: "2026",
+    description: "Designing and deploying cloud‑native applications.",
   },
   {
-    title: "MongoDB University",
+    title: "MongoDB Developer",
     institution: "MongoDB",
-    year: "2020",
+    year: "2026",
     description:
       "Advanced MongoDB design, aggregation, and performance tuning.",
   },
   {
-    title: "React & TypeScript",
-    institution: "Frontend Masters",
-    year: "2021",
-    description: "Building type‑safe applications with React and TypeScript.",
+    title: "React & JavaScript",
+    institution: "Frontend Essentials",
+    year: "2025",
+    description: "Building applications with React and JavaScript.",
   },
 ];
 
