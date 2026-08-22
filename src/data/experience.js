@@ -21,3 +21,4 @@ export const experience = [
     tech: ["MERN", "Stripe", "Redis", "Tailwind"],
   },
 ];
+//here data gets end
