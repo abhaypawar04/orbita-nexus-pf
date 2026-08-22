@@ -1,100 +1,198 @@
 import React, { useState } from "react";
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const [status, setStatus] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    // Validation
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setStatus("error");
-      setIsSubmitting(false);
       return;
     }
 
-    // Simulate submission
-    setTimeout(() => {
-      setStatus("success");
-      setIsSubmitting(false);
-      setForm({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus(null), 4000);
-    }, 800);
+    setIsSubmitting(true);
+
+    const phoneNumber = "917875885580";
+
+    const whatsappMessage = `
+Hello Abhay,
+
+I would like to get in touch with you.
+
+Name: ${form.name}
+Email: ${form.email}
+
+Message:
+${form.message}
+    `.trim();
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      whatsappMessage,
+    )}`;
+
+    window.location.href = whatsappUrl;
   };
 
   return (
-    <section id="contact" className="section-pad">
-      <div className="max-w-4xl mx-auto">
+    <section
+      id="contact"
+      className="
+        section-pad
+        relative
+        overflow-hidden
+        bg-gradient-to-br
+        from-[#f5f7fa]
+        via-[#eef1f5]
+        to-[#f8f9fb]
+      "
+    >
+      {/* Background Glow */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -left-32
+          top-1/4
+          h-[450px]
+          w-[450px]
+          rounded-full
+          bg-blue-300/20
+          blur-[130px]
+        "
+      />
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -right-32
+          bottom-0
+          h-[450px]
+          w-[450px]
+          rounded-full
+          bg-purple-300/20
+          blur-[130px]
+        "
+      />
+
+      <div className="relative z-10 max-w-4xl mx-auto">
         {/* Header */}
         <div className="reveal text-center mb-14">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+          <span
+            className="
+              inline-block
+              text-xs
+              font-semibold
+              tracking-[0.2em]
+              uppercase
+              text-primary
+            "
+          >
             Connect
           </span>
-          <h2 className="title-md mt-2">Let's work together</h2>
-          <p className="subtitle mx-auto mt-3">
+
+          <h2
+            className="
+              title-md
+              mt-2
+              tracking-[-0.04em]
+              text-[#17171a]
+            "
+          >
+            Let's work together
+          </h2>
+
+          <p className="mx-auto mt-3 max-w-xl text-[#777b84]">
             Have a project in mind? Reach out.
           </p>
         </div>
 
         <div className="grid md:grid-cols-5 gap-8 items-start">
-          {/* Contact Info */}
-          <div className="md:col-span-2 space-y-4 text-muted">
-            <div>
-              <span className="block text-sm font-medium text-dark">Email</span>
+          {/* Contact Information */}
+          <div className="md:col-span-2 space-y-4">
+            <div
+              className="
+                reveal
+                rounded-2xl
+                border border-white/80
+                bg-white/40
+                p-5
+                backdrop-blur-xl
+                shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                transition-all
+                duration-500
+                hover:-translate-y-1
+                hover:bg-white/60
+              "
+            >
+              <span className="block text-xs font-semibold uppercase tracking-wider text-[#858991]">
+                Email
+              </span>
+
               <a
-                href="mailto:alex@merndev.io"
-                className="text-primary hover:underline"
+                href="mailto:pawarabhay@icloud.com"
+                className="mt-1 block text-sm font-medium text-[#25262a] hover:text-primary transition"
               >
                 pawarabhay@icloud.com
               </a>
             </div>
-            <div>
-              <span className="block text-sm font-medium text-dark">
+            <div
+              className="
+                reveal
+                rounded-2xl
+                border border-white/80
+                bg-white/40
+                p-5
+                backdrop-blur-xl
+                shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+                transition-all
+                duration-500
+                hover:-translate-y-1
+                hover:bg-white/60
+              "
+            >
+              <span className="block text-xs font-semibold uppercase tracking-wider text-[#858991]">
                 Location
               </span>
-              Pune, Maharashtra
-            </div>
-            <div className="flex gap-4 pt-2">
-              <a
-                href="#"
-                className="text-muted hover:text-dark transition"
-                aria-label="GitHub"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-              </a>
-              <a
-                href="#"
-                className="text-muted hover:text-dark transition"
-                aria-label="LinkedIn"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
+
+              <p className="mt-1 text-sm font-medium text-[#25262a]">
+                Pune, Maharashtra
+              </p>
             </div>
           </div>
 
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="md:col-span-3 bg-white p-6 rounded-2xl shadow-sm border border-[#eaeaef] space-y-4"
+            className="
+              reveal
+              relative
+              md:col-span-3
+              overflow-hidden
+              rounded-[2rem]
+              border border-white/80
+              bg-white/40
+              p-6
+              md:p-8
+              backdrop-blur-2xl
+              shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+              space-y-4
+            "
           >
             <input
               type="text"
@@ -102,43 +200,106 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="Your name"
-              className="w-full px-4 py-3 bg-[#f8f8fc] border border-[#eaeaef] rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
+              className="
+                w-full
+                rounded-2xl
+                border border-black/5
+                bg-white/45
+                px-5
+                py-4
+                text-sm
+                outline-none
+                backdrop-blur-xl
+                transition
+                focus:bg-white/70
+                focus:ring-4
+                focus:ring-primary/10
+              "
               required
             />
+
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="Email address"
-              className="w-full px-4 py-3 bg-[#f8f8fc] border border-[#eaeaef] rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
+              className="
+                w-full
+                rounded-2xl
+                border border-black/5
+                bg-white/45
+                px-5
+                py-4
+                text-sm
+                outline-none
+                backdrop-blur-xl
+                transition
+                focus:bg-white/70
+                focus:ring-4
+                focus:ring-primary/10
+              "
               required
             />
+
             <textarea
               name="message"
               value={form.message}
               onChange={handleChange}
-              rows="4"
+              rows="5"
               placeholder="Tell me about your project..."
-              className="w-full px-4 py-3 bg-[#f8f8fc] border border-[#eaeaef] rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 transition resize-none"
+              className="
+                w-full
+                resize-none
+                rounded-2xl
+                border border-black/5
+                bg-white/45
+                px-5
+                py-4
+                text-sm
+                leading-relaxed
+                outline-none
+                backdrop-blur-xl
+                transition
+                focus:bg-white/70
+                focus:ring-4
+                focus:ring-primary/10
+              "
               required
             />
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3.5 bg-dark text-white rounded-xl font-medium hover:bg-dark/80 transition shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+              className="
+                group
+                flex
+                w-full
+                items-center
+                justify-center
+                gap-2
+                rounded-2xl
+                bg-[#17181b]
+                px-6
+                py-4
+                text-sm
+                font-medium
+                text-white
+                shadow-[0_10px_30px_rgba(0,0,0,0.15)]
+                transition-all
+                duration-500
+                hover:-translate-y-0.5
+                hover:bg-black
+                hover:shadow-[0_15px_40px_rgba(0,0,0,0.22)]
+                active:scale-[0.98]
+                disabled:opacity-50
+              "
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {isSubmitting ? "Opening WhatsApp..." : "Send Message →"}
             </button>
 
-            {status === "success" && (
-              <p className="text-sm text-green-600 text-center">
-                ✓ Message sent successfully!
-              </p>
-            )}
             {status === "error" && (
-              <p className="text-sm text-rose-500 text-center">
+              <p className="text-center text-sm font-medium text-rose-500">
                 Please fill all fields.
               </p>
             )}

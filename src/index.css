@@ -10,13 +10,29 @@
 }
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
   }
 
   body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
     @apply bg-lightBg text-dark antialiased;
+
     font-family:
       "Inter",
       -apple-system,
@@ -24,6 +40,16 @@
       "Segoe UI",
       Roboto,
       sans-serif;
+
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: clip;
   }
 
   *:focus-visible {
@@ -51,8 +77,13 @@
     @apply border-b border-black/5 bg-white/70 backdrop-blur-2xl;
   }
 
+  /*
+   * IMPORTANT:
+   * Don't put max-w-7xl on the section itself.
+   * This utility is now only for padding.
+   */
   .section-pad {
-    @apply mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28 lg:px-20;
+    @apply px-6 py-20 md:px-10 md:py-28 lg:px-20;
   }
 
   .title-lg {
