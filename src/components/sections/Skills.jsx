@@ -12,7 +12,6 @@ const Skills = () => {
         overflow-hidden
         bg-cover
         bg-center
-        bg-fixed
       "
       style={{
         backgroundImage: `url(${two})`,

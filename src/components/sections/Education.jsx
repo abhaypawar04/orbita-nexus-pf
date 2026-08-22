@@ -40,7 +40,7 @@ const Education = () => {
         overflow-hidden
         bg-cover
         bg-center
-        bg-fixed
+      
       "
       style={{ backgroundImage: `url(${three})` }}
     >

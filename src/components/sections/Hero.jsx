@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat pt-20 md:pt-24 bg-fixed"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat pt-20 md:pt-24 "
       style={{
         backgroundImage: `
           linear-gradient(
