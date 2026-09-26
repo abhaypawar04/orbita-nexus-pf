@@ -1,5 +1,5 @@
 
-//12GF
+//12
 //DF
 import React from "react";
 import Navbar from "./components/layout/Navbar";
