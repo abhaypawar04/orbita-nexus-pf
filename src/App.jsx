@@ -1,5 +1,5 @@
 
-//12GFYV
+//12GF
 //DF35
 import React from "react";
 import Navbar from "./components/layout/Navbar";
